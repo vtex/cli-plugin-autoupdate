@@ -5,7 +5,7 @@
   "bugs": "https://github.com/oclif/plugin-update/issues",
   "dependencies": {
     "@heroku-cli/color": "^1.1.5",
-    "@oclif/command": "^1.4.32",
+    "@oclif/command": "1.4.30",
     "@oclif/config": "^1.6.27",
     "@oclif/errors": "^1.1.2",
     "@types/semver": "^5.5.0",
