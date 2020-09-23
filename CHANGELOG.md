@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-beta] - 2020-09-23
+
 ### Fixed
 - [Toolbelt Plugin] Plugins was not able to find `vtex` package, solved with symlink from `/current` to `/current/node_modules/vtex`
 
