@@ -12,6 +12,7 @@ metadata:
     grafana/dashboard-selector: ""
     github.com/project-slug: vtex/cli-plugin-autoupdate
     backstage.io/techdocs-ref: dir:../
+    vtex.com/application-id: 8VM5RW8G
 spec:
   lifecycle: stable
   owner: apps
