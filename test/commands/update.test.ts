@@ -4,11 +4,16 @@ import * as path from 'path'
 import * as qq from 'qqjs'
 
 const awsAvailable = (() => {
-  try { execSync('aws --version', {stdio: 'ignore'}); return true } catch { return false }
+  try {
+    execSync('aws --version', {stdio: 'ignore'})
+    return true
+  } catch {
+    return false
+  }
 })()
 
 const skipIfWindows = process.platform === 'win32' ? it.skip : it
-const skipIfNoAws = !awsAvailable ? it.skip : skipIfWindows
+const skipIfNoAws = awsAvailable ? skipIfWindows : it.skip
 
 describe('update', () => {
   skipIfNoAws('tests the updater', async () => {
