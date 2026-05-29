@@ -1,5 +1,5 @@
 - name: cli-plugin-autoupdate
-  referenceId: PLACEHOLDER
+  referenceId: 8VM5RW8G
   build:
     provider: dkcicd
     pipelines:
