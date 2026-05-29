@@ -1,11 +1,17 @@
+import {execSync} from 'child_process'
 import {expect} from 'chai'
 import * as path from 'path'
 import * as qq from 'qqjs'
 
+const awsAvailable = (() => {
+  try { execSync('aws --version', {stdio: 'ignore'}); return true } catch { return false }
+})()
+
 const skipIfWindows = process.platform === 'win32' ? it.skip : it
+const skipIfNoAws = !awsAvailable ? it.skip : skipIfWindows
 
 describe('update', () => {
-  skipIfWindows('tests the updater', async () => {
+  skipIfNoAws('tests the updater', async () => {
     await qq.rm([process.env.HOME!, '.local', 'share', 'oclif-example-s3-cli'])
     await qq.x('aws s3 rm --recursive s3://oclif-staging/s3-update-example-cli')
     const sha = await qq.x.stdout('git', ['rev-parse', '--short', 'HEAD'])
